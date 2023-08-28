@@ -1,8 +1,13 @@
-import matplotlib.pyplot as plt 
 
-estudantes = ["João","Marx","Maria"]
-notas = [8.5,4.6,9]
-x = estudantes
-y = notas
-plt.bar(x,y)
-plt.show()
+def cria_conta(numero, titular, saldo, limite):
+    conta = {"numero": numero, "titular": titular, "saldo": saldo, "limite": limite}
+    return conta
+
+def deposita(conta, valor):
+    conta["saldo"] += valor
+
+def saca(conta, valor):
+    conta["saldo"] -= valor
+
+def extrato(conta):
+    print("Saldo {}".format(conta["saldo"]))
