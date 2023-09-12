@@ -1,0 +1,19 @@
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Gerar dados de exemplo
+dados = np.random.rand(10, 10)
+
+# Criar um gráfico de calor usando seaborn
+plt.figure(figsize=(10, 8))
+sns.set(font_scale=1.2)
+sns.heatmap(dados, annot=True, cmap="YlGnBu", linewidths=.5, fmt=".2f", cbar=True, square=True)
+
+# Configurar rótulos dos eixos
+plt.xlabel("Eixo X")
+plt.ylabel("Eixo Y")
+plt.title("Gráfico de Calor Incrível")
+
+# Mostrar o gráfico
+plt.show()
