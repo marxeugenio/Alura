@@ -1,0 +1,16 @@
+# Abra um arquivo para leitura
+arquivo = open('exemplo.txt', 'r')
+
+# Leia os primeiros 10 bytes do arquivo
+dados = arquivo.read(10)
+print("Dados lidos:", dados)
+
+# Mova o cursor para o início do arquivo
+arquivo.seek(0, 0)
+
+# Leia os próximos 5 bytes do arquivo a partir do início
+dados = arquivo.read(5)
+print("Dados lidos após seek:", dados)
+
+# Lembre-se de fechar o arquivo quando terminar
+arquivo.close()
