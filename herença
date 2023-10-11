@@ -1,0 +1,25 @@
+# Classe Pai (Superclasse)
+class Animal:
+    def __init__(self, nome):
+        self.nome = nome
+
+    def fazer_som(self):
+        pass
+
+# Classe Filho (Subclasse) que herda de Animal
+class Cachorro(Animal):
+    def fazer_som(self):
+        return f"{self.nome} faz au au!"
+
+# Classe Filho (Subclasse) que herda de Animal
+class Gato(Animal):
+    def fazer_som(self):
+        return f"{self.nome} faz miau!"
+
+# Criando objetos das classes
+rex = Cachorro("Rex")
+whiskers = Gato("Whiskers")
+
+# Chamando o método fazer_som para cada objeto
+print(rex.fazer_som())       # Saída: "Rex faz au au!"
+print(whiskers.fazer_som())  # Saída: "Whiskers faz miau!"
