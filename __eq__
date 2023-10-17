@@ -1,0 +1,36 @@
+def mdc(m,n):
+    while m%n != 0:
+        oldm = m
+        oldn = n
+
+        m = oldn
+        n = oldm%oldn
+    return n
+
+class Fraction:
+     def __init__(self,cima,baixo):
+         self.num = cima
+         self.den = baixo
+
+     def __str__(self):
+         return str(self.num)+"/"+str(self.den)
+
+     def show(self):
+         print(self.num,"/",self.den)
+
+     def __add__(self, other):
+         novonum = self.num*other.den + self.den*other.num
+         novoden = self.den * other.den
+         comum = mdc(novonum, novoden)
+         return Fraction(novonum//comum, novoden//comun)
+
+     def __eq__(self, other):
+         primeiro = self.num * other.den
+         segundo  = other.num * self.den
+
+         return primeiro == segundo
+
+x = Fraction(1,2)
+y = Fraction(2,3)
+print(x+y)
+print(x == y)
